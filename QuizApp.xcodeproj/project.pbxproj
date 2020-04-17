@@ -3,17 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2A182C55244A0207000BDD56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A182C54244A0207000BDD56 /* AppDelegate.swift */; };
-		2A182C57244A0207000BDD56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A182C56244A0207000BDD56 /* SceneDelegate.swift */; };
-		2A182C59244A0207000BDD56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A182C58244A0207000BDD56 /* ContentView.swift */; };
 		2A182C5B244A0208000BDD56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A182C5A244A0208000BDD56 /* Assets.xcassets */; };
 		2A182C5E244A0208000BDD56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A182C5D244A0208000BDD56 /* Preview Assets.xcassets */; };
 		2A182C61244A0208000BDD56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A182C5F244A0208000BDD56 /* LaunchScreen.storyboard */; };
-		2A182C6C244A0209000BDD56 /* QuizAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A182C6B244A0209000BDD56 /* QuizAppTests.swift */; };
+		2A182C9E244A0B37000BDD56 /* QuizEngine in Frameworks */ = {isa = PBXBuildFile; productRef = 2A182C9D244A0B37000BDD56 /* QuizEngine */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,14 +27,11 @@
 /* Begin PBXFileReference section */
 		2A182C51244A0207000BDD56 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A182C54244A0207000BDD56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2A182C56244A0207000BDD56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2A182C58244A0207000BDD56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2A182C5A244A0208000BDD56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A182C5D244A0208000BDD56 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A182C60244A0208000BDD56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A182C62244A0208000BDD56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A182C67244A0209000BDD56 /* QuizAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A182C6B244A0209000BDD56 /* QuizAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAppTests.swift; sourceTree = "<group>"; };
 		2A182C6D244A0209000BDD56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A182C9E244A0B37000BDD56 /* QuizEngine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,8 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				2A182C54244A0207000BDD56 /* AppDelegate.swift */,
-				2A182C56244A0207000BDD56 /* SceneDelegate.swift */,
-				2A182C58244A0207000BDD56 /* ContentView.swift */,
 				2A182C5A244A0208000BDD56 /* Assets.xcassets */,
 				2A182C5F244A0208000BDD56 /* LaunchScreen.storyboard */,
 				2A182C62244A0208000BDD56 /* Info.plist */,
@@ -101,7 +95,6 @@
 		2A182C6A244A0209000BDD56 /* QuizAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				2A182C6B244A0209000BDD56 /* QuizAppTests.swift */,
 				2A182C6D244A0209000BDD56 /* Info.plist */,
 			);
 			path = QuizAppTests;
@@ -123,6 +116,9 @@
 			dependencies = (
 			);
 			name = QuizApp;
+			packageProductDependencies = (
+				2A182C9D244A0B37000BDD56 /* QuizEngine */,
+			);
 			productName = QuizApp;
 			productReference = 2A182C51244A0207000BDD56 /* QuizApp.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +169,9 @@
 				Base,
 			);
 			mainGroup = 2A182C48244A0207000BDD56;
+			packageReferences = (
+				2A182C9C244A0B37000BDD56 /* XCRemoteSwiftPackageReference "QuizEngine" */,
+			);
 			productRefGroup = 2A182C52244A0207000BDD56 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -209,8 +208,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A182C55244A0207000BDD56 /* AppDelegate.swift in Sources */,
-				2A182C57244A0207000BDD56 /* SceneDelegate.swift in Sources */,
-				2A182C59244A0207000BDD56 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +215,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A182C6C244A0209000BDD56 /* QuizAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +369,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.jerosanchez.QuizApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -392,7 +388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.jerosanchez.QuizApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -469,6 +465,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2A182C9C244A0B37000BDD56 /* XCRemoteSwiftPackageReference "QuizEngine" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jerosanchez/QuizEngine";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A182C9D244A0B37000BDD56 /* QuizEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A182C9C244A0B37000BDD56 /* XCRemoteSwiftPackageReference "QuizEngine" */;
+			productName = QuizEngine;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2A182C49244A0207000BDD56 /* Project object */;
 }
