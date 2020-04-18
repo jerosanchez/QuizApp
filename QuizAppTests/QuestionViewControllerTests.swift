@@ -5,36 +5,36 @@ import XCTest
 class QuestionViewControllerTests: XCTestCase {
 
     func test_viewDidLoad_rendersQuestionHeaderTest() {
-        let sut = QuestionViewController(question: "Q1", options: [])
-        
-        sut.loadViewIfNeeded()
-        
-        XCTAssertEqual(sut.headerLabel.text, "Q1")
+        XCTAssertEqual(makeSUT(question: "Q1").headerLabel.text, "Q1")
     }
     
-    func test_viewDidLoad_withNoOptions_rendersZeroOptions() {
-        let sut = QuestionViewController(question: "Q1", options: [])
-
-        sut.loadViewIfNeeded()
-
-        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
+    func test_viewDidLoad_rendersOptions() {
+        XCTAssertEqual(makeSUT(options: []).tableView.numberOfRows(inSection: 0), 0)
+        XCTAssertEqual(makeSUT(options: ["A1"]).tableView.numberOfRows(inSection: 0), 1)
+        XCTAssertEqual(makeSUT(options: ["A1", "A2"]).tableView.numberOfRows(inSection: 0), 2)
     }
     
-    func test_viewDidLoad_withOneOption_rendersOneOption() {
-        let sut = QuestionViewController(question: "Q1", options: ["A1"])
-
-        sut.loadViewIfNeeded()
-
-        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
+    func test_viewDidLoad_rendersOptionsText() {
+        XCTAssertEqual(makeSUT(options: ["A1"]).tableView.title(at: 0), "A1")
+        XCTAssertEqual(makeSUT(options: ["A1", "A2"]).tableView.title(at: 1), "A2")
     }
     
-    func test_viewDidLoad_withOneOption_rendersOneOptionText() {
-        let sut = QuestionViewController(question: "Q1", options: ["A1"])
-        
+    // MARK: - Helpers
+    
+    private func makeSUT(question: String = "", options: [String] = []) -> QuestionViewController {
+        let sut = QuestionViewController(question: question, options: options)
         sut.loadViewIfNeeded()
-        let indexPath = IndexPath(row: 0, section: 0)
-        let cell = sut.tableView.dataSource?.tableView(sut.tableView, cellForRowAt: indexPath)
+        return sut
+    }
+}
 
-        XCTAssertEqual(cell?.textLabel?.text, "A1")
+extension UITableView {
+    func cell(at row: Int) -> UITableViewCell? {
+        let indexPath = IndexPath(row: row, section: 0)
+        return dataSource?.tableView(self, cellForRowAt: indexPath)
+    }
+    
+    func title(at row: Int) -> String? {
+        return cell(at: row)?.textLabel?.text
     }
 }
