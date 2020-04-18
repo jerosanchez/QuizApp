@@ -7,9 +7,9 @@ class QuestionViewController: UIViewController {
 
     private var question = ""
     private var options = [String]()
-    private var selectionCallback: (String) -> Void = { _ in }
+    private var selectionCallback: ([String]) -> Void = { _ in }
     
-    convenience init(question: String, options: [String], selectionCallback: @escaping (String) -> Void) {
+    convenience init(question: String, options: [String], selectionCallback: @escaping ([String]) -> Void) {
         self.init()
         self.question = question
         self.options = options
@@ -50,6 +50,17 @@ extension QuestionViewController: UITableViewDataSource {
 
 extension QuestionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectionCallback(options[indexPath.row])
+        selectionCallback(selectedOptions(in: tableView))
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        selectionCallback(selectedOptions(in: tableView))
+    }
+    
+    // Helpers
+    
+    private func selectedOptions(in tableView: UITableView) -> [String] {
+        guard let indexPaths = tableView.indexPathsForSelectedRows else { return [] }
+        return indexPaths.map({ options[$0.row] })
     }
 }

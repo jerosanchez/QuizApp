@@ -19,21 +19,44 @@ class QuestionViewControllerTests: XCTestCase {
         XCTAssertEqual(makeSUT(options: ["A1", "A2"]).tableView.title(at: 1), "A2")
     }
     
-    func test_tableView_optionSelected_notifiedDelegate() {
-        var receivedAnswer = ""
-        let sut = makeSUT(options: ["A1"]) {
-            receivedAnswer = $0
-        }
+    func test_optionSelected_notifiesDelegateWithLastSelection() {
+        var receivedAnswers = [String]()
+        let sut = makeSUT(options: ["A1", "A2"]) { receivedAnswers = $0 }
         
-        let indexPath = IndexPath(row: 0, section: 0)
-        sut.tableView.delegate?.tableView?(sut.tableView, didSelectRowAt: indexPath)
+        sut.tableView.select(row: 0)
+        XCTAssertEqual(receivedAnswers, ["A1"])
         
-        XCTAssertEqual(receivedAnswer, "A1")
+        sut.tableView.select(row: 1)
+        XCTAssertEqual(receivedAnswers, ["A2"])
+    }
+    
+    func test_optionsSelected_withMultipleSelectionEnabled_notifiesDelegateSelection() {
+        var receivedAnswers = [String]()
+        let sut = makeSUT(options: ["A1", "A2"]) { receivedAnswers = $0 }
+        sut.tableView.allowsMultipleSelection = true
+        
+        sut.tableView.select(row: 0)
+        XCTAssertEqual(receivedAnswers, ["A1"])
+        
+        sut.tableView.select(row: 1)
+        XCTAssertEqual(receivedAnswers, ["A1", "A2"])
+    }
+    
+    func test_optionDeselected_withMultipleSelectionEnabled_notifiesDelegate() {
+        var receivedAnswers = [String]()
+        let sut = makeSUT(options: ["A1"]) { receivedAnswers = $0 }
+        sut.tableView.allowsMultipleSelection = true
+        
+        sut.tableView.select(row: 0)
+        XCTAssertEqual(receivedAnswers, ["A1"])
+
+        sut.tableView.deselect(row: 0)        
+        XCTAssertEqual(receivedAnswers, [])
     }
     
     // MARK: - Helpers
     
-    private func makeSUT(question: String = "", options: [String] = [], selectionCallback: @escaping (String) -> Void = { _ in }) -> QuestionViewController {
+    private func makeSUT(question: String = "", options: [String] = [], selectionCallback: @escaping ([String]) -> Void = { _ in }) -> QuestionViewController {
         let sut = QuestionViewController(question: question, options: options, selectionCallback: selectionCallback)
         sut.loadViewIfNeeded()
         return sut
@@ -42,11 +65,22 @@ class QuestionViewControllerTests: XCTestCase {
 
 extension UITableView {
     func cell(at row: Int) -> UITableViewCell? {
-        let indexPath = IndexPath(row: row, section: 0)
-        return dataSource?.tableView(self, cellForRowAt: indexPath)
+        return dataSource?.tableView(self, cellForRowAt: IndexPath(row: row, section: 0))
     }
     
     func title(at row: Int) -> String? {
         return cell(at: row)?.textLabel?.text
+    }
+    
+    func select(row: Int) {
+        let indexPath = IndexPath(row: row, section: 0)
+        selectRow(at: indexPath, animated: true, scrollPosition: .none)
+        delegate?.tableView?(self, didSelectRowAt: indexPath)
+    }
+    
+    func deselect(row: Int) {
+        let indexPath = IndexPath(row: row, section: 0)
+        deselectRow(at: indexPath, animated: true)
+        delegate?.tableView?(self, didDeselectRowAt: indexPath)
     }
 }
