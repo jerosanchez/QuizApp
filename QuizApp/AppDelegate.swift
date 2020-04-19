@@ -15,9 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let vc = QuestionViewController(question: "A question", options: ["Option 1", "Option 2", "Option 3"]) { print($0) }
-        vc.loadViewIfNeeded()
-//        vc.tableView.allowsMultipleSelection = true
+        let vc = ResultViewController(summary: "You got 1/2 correct", answers: [
+            PresentableAnswer(question: "One question", answer: "Oh, yeah!", wrongAnswer: nil),
+            PresentableAnswer(question: "Another question", answer: "Oh, yeah", wrongAnswer: "Hell, no!")
+        ])
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = vc
