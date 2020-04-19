@@ -25,6 +25,8 @@
 		2A182CB4244C4E9D000BDD56 /* PresentableAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A182CB3244C4E9D000BDD56 /* PresentableAnswer.swift */; };
 		2A182CB6244C4EAE000BDD56 /* CorrectAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A182CB5244C4EAE000BDD56 /* CorrectAnswerCell.swift */; };
 		2A182CB8244C4ED2000BDD56 /* WrongAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A182CB7244C4ED2000BDD56 /* WrongAnswerCell.swift */; };
+		2A182CBA244CA17F000BDD56 /* NavigationControllerRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A182CB9244CA17F000BDD56 /* NavigationControllerRouterTests.swift */; };
+		2A182CBC244CA227000BDD56 /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A182CBB244CA227000BDD56 /* NavigationControllerRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		2A182CB3244C4E9D000BDD56 /* PresentableAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableAnswer.swift; sourceTree = "<group>"; };
 		2A182CB5244C4EAE000BDD56 /* CorrectAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectAnswerCell.swift; sourceTree = "<group>"; };
 		2A182CB7244C4ED2000BDD56 /* WrongAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongAnswerCell.swift; sourceTree = "<group>"; };
+		2A182CB9244CA17F000BDD56 /* NavigationControllerRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouterTests.swift; sourceTree = "<group>"; };
+		2A182CBB244CA227000BDD56 /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 				2A182CB7244C4ED2000BDD56 /* WrongAnswerCell.swift */,
 				2A182CB1244C4E5E000BDD56 /* UITableViewExtensions.swift */,
 				2A182CB3244C4E9D000BDD56 /* PresentableAnswer.swift */,
+				2A182CBB244CA227000BDD56 /* NavigationControllerRouter.swift */,
 				2A182C5A244A0208000BDD56 /* Assets.xcassets */,
 				2A182C5F244A0208000BDD56 /* LaunchScreen.storyboard */,
 				2A182C62244A0208000BDD56 /* Info.plist */,
@@ -134,6 +139,7 @@
 				2A182CAB244B66F3000BDD56 /* TableViewHelpers.swift */,
 				2A182C9F244A0DA4000BDD56 /* QuestionViewControllerTests.swift */,
 				2A182CA5244B15E3000BDD56 /* ResultViewControllerTests.swift */,
+				2A182CB9244CA17F000BDD56 /* NavigationControllerRouterTests.swift */,
 				2A182C6D244A0209000BDD56 /* Info.plist */,
 			);
 			path = QuizAppTests;
@@ -251,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A182CBC244CA227000BDD56 /* NavigationControllerRouter.swift in Sources */,
 				2A182CA2244A0E70000BDD56 /* QuestionViewController.swift in Sources */,
 				2A182C55244A0207000BDD56 /* AppDelegate.swift in Sources */,
 				2A182CB8244C4ED2000BDD56 /* WrongAnswerCell.swift in Sources */,
@@ -265,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A182CBA244CA17F000BDD56 /* NavigationControllerRouterTests.swift in Sources */,
 				2A182CA0244A0DA4000BDD56 /* QuestionViewControllerTests.swift in Sources */,
 				2A182CAC244B66F3000BDD56 /* TableViewHelpers.swift in Sources */,
 				2A182CA6244B15E3000BDD56 /* ResultViewControllerTests.swift in Sources */,
