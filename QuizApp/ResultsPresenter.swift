@@ -4,6 +4,7 @@ import QuizEngine
 struct ResultPresenter {
     
     let result: QuizResult<Question<String>, [String]>
+    let questions: [Question<String>]
     let correctAnswers: [Question<String>: [String]]
     
     var summary: String {
@@ -11,9 +12,10 @@ struct ResultPresenter {
     }
     
     var presentableAnswers: [PresentableAnswer] {
-        return result.answers.map { (question, userAnswer) in
-            guard let correctAnswer = self.correctAnswers[question] else {
-                fatalError("Couldn't find correct answer for question: \(question)")
+        return questions.map { question in
+            guard let userAnswer = self.result.answers[question],
+                let correctAnswer = self.correctAnswers[question] else {
+                fatalError("Couldn't find answers for question: \(question)")
             }
             return presentableAnswer(question, correctAnswer, userAnswer)
         }
