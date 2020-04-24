@@ -8,12 +8,14 @@ class QuestionViewController: UIViewController {
     private(set) var question = ""
     private(set) var options = [String]()
     private var selectionCallback: ([String]) -> Void = { _ in }
+    private(set) var allowsMultipleSelection: Bool = false
     
-    convenience init(question: String, options: [String], selectionCallback: @escaping ([String]) -> Void) {
+    convenience init(question: String, options: [String], allowsMultipleSelection: Bool, selectionCallback: @escaping ([String]) -> Void) {
         self.init()
         self.question = question
         self.options = options
         self.selectionCallback = selectionCallback
+        self.allowsMultipleSelection = allowsMultipleSelection
     }
     
     override func viewDidLoad() {
@@ -22,6 +24,7 @@ class QuestionViewController: UIViewController {
         headerLabel.text = question
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.allowsMultipleSelection = allowsMultipleSelection
     }
 }
 

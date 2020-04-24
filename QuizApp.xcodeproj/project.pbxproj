@@ -34,6 +34,8 @@
 		2A1A836A244F5F820054C6C4 /* iOSViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A8369244F5F820054C6C4 /* iOSViewControllerFactory.swift */; };
 		2A1A836C2450A11D0054C6C4 /* ResultsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A836B2450A11D0054C6C4 /* ResultsPresenterTests.swift */; };
 		2A1A836E2450A1320054C6C4 /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A836D2450A1320054C6C4 /* ResultsPresenter.swift */; };
+		2A1A8370245204360054C6C4 /* QuestionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A836F245204360054C6C4 /* QuestionPresenter.swift */; };
+		2A1A83722452045C0054C6C4 /* QuestionPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A83712452045C0054C6C4 /* QuestionPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		2A1A8369244F5F820054C6C4 /* iOSViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactory.swift; sourceTree = "<group>"; };
 		2A1A836B2450A11D0054C6C4 /* ResultsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenterTests.swift; sourceTree = "<group>"; };
 		2A1A836D2450A1320054C6C4 /* ResultsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenter.swift; sourceTree = "<group>"; };
+		2A1A836F245204360054C6C4 /* QuestionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresenter.swift; sourceTree = "<group>"; };
+		2A1A83712452045C0054C6C4 /* QuestionPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 				2A1A8365244F5DA30054C6C4 /* ViewControllerFactory.swift */,
 				2A1A8369244F5F820054C6C4 /* iOSViewControllerFactory.swift */,
 				2A1A836D2450A1320054C6C4 /* ResultsPresenter.swift */,
+				2A1A836F245204360054C6C4 /* QuestionPresenter.swift */,
 				2A182C5A244A0208000BDD56 /* Assets.xcassets */,
 				2A182C5F244A0208000BDD56 /* LaunchScreen.storyboard */,
 				2A182C62244A0208000BDD56 /* Info.plist */,
@@ -161,6 +166,7 @@
 				2A182CBF244CBC1B000BDD56 /* QuetionTests.swift */,
 				2A1A8367244F5DEE0054C6C4 /* iOSViewControllerFactoryTests.swift */,
 				2A1A836B2450A11D0054C6C4 /* ResultsPresenterTests.swift */,
+				2A1A83712452045C0054C6C4 /* QuestionPresenterTests.swift */,
 				2A182C6D244A0209000BDD56 /* Info.plist */,
 			);
 			path = QuizAppTests;
@@ -287,6 +293,7 @@
 				2A182CC2244CC3D1000BDD56 /* Question.swift in Sources */,
 				2A182CB8244C4ED2000BDD56 /* WrongAnswerCell.swift in Sources */,
 				2A182CA8244B1663000BDD56 /* ResultViewController.swift in Sources */,
+				2A1A8370245204360054C6C4 /* QuestionPresenter.swift in Sources */,
 				2A182CB4244C4E9D000BDD56 /* PresentableAnswer.swift in Sources */,
 				2A182CB6244C4EAE000BDD56 /* CorrectAnswerCell.swift in Sources */,
 				2A182CB2244C4E5E000BDD56 /* UITableViewExtensions.swift in Sources */,
@@ -299,6 +306,7 @@
 			files = (
 				2A182CBA244CA17F000BDD56 /* NavigationControllerRouterTests.swift in Sources */,
 				2A182CC0244CBC1B000BDD56 /* QuetionTests.swift in Sources */,
+				2A1A83722452045C0054C6C4 /* QuestionPresenterTests.swift in Sources */,
 				2A182CA0244A0DA4000BDD56 /* QuestionViewControllerTests.swift in Sources */,
 				2A1A8368244F5DEE0054C6C4 /* iOSViewControllerFactoryTests.swift in Sources */,
 				2A182CAC244B66F3000BDD56 /* TableViewHelper.swift in Sources */,
