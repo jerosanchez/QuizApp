@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuizEngine
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,13 +16,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let vc = ResultViewController(summary: "You got 1/2 correct", answers: [
-            PresentableAnswer(question: "One question", answer: "Oh, yeah!", wrongAnswer: nil),
-            PresentableAnswer(question: "Another question", answer: "Oh, yeah", wrongAnswer: "Hell, no!")
-        ])
+        let navigationController = UINavigationController()
+
+//        let question1 = Question.singleAnswer("What´s Mike nationalty?")
+//        let questions = [question1]
+//
+//        let option1 = "Canadian"
+//        let option2 = "American"
+//        let option3 = "Greek"
+//        let options = [option1, option2, option3]
+//
+//        let correctAnswers = [question1: [option3]]
+//
+//        let factory = iOSViewControllerFactory(
+//            questions: questions,
+//            options: [question1: options],
+//            correctAnswers: correctAnswers)
+//
+//        let router = NavigationControllerRouter(
+//            navigationController,
+//            factory: factory)
+//
+//        startGame(questions: questions, router: router, correctAnswers: correctAnswers)
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = vc
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
         return true
