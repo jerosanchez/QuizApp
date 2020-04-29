@@ -22,7 +22,9 @@ class iOSViewControllerFactory: ViewControllerFactory {
     
     func resultViewController(for result: QuizResult<Question<String>, [String]>) -> UIViewController {
         let presenter = ResultPresenter(result: result, questions: questions, correctAnswers: correctAnswers)
-        return ResultViewController(summary: presenter.summary, answers: presenter.presentableAnswers)
+        let controller = ResultViewController(summary: presenter.summary, answers: presenter.presentableAnswers)
+        controller.title = presenter.title
+        return controller
     }
     
     // MARK: - Helpers

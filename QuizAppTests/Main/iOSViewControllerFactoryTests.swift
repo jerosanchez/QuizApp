@@ -56,6 +56,12 @@ class iOSViewControllerFactoryTests: XCTestCase {
     
     // MARK: - Result VC
     
+    func test_resultViewController_createsControllerWithTitle() {
+        let (controller, presenter) = makeResults()
+
+        XCTAssertEqual(controller.title, presenter.title)
+    }
+    
     func test_resultViewController_createsControllerWithSummary() {
         let (controller, presenter) = makeResults()
 
